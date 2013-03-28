@@ -18,7 +18,7 @@
 
         <!-- Mango -->
         <dependency>
-            <groupId>mango</groupId>
+            <groupId>org.calrissian.mango</groupId>
             <artifactId>mango-types</artifactId>
             <version>1.0.3-SNAPSHOT</version>
         </dependency>
