@@ -1,4 +1,4 @@
-package org.calrissian.stormrecipes.common.camel.spout;
+package org.calrissian.recipes.camel.spout;
 
 import backtype.storm.spout.SpoutOutputCollector;
 import backtype.storm.task.TopologyContext;

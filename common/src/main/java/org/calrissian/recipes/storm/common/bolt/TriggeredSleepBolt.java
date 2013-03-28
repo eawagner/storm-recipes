@@ -1,4 +1,4 @@
-package org.calrissian.stormrecipes.common.bolt;
+package org.calrissian.recipes.storm.common.bolt;
 
 import backtype.storm.task.OutputCollector;
 import backtype.storm.task.TopologyContext;

@@ -1,4 +1,4 @@
-package org.calrissian.stormrecipes.common.bolt;
+package org.calrissian.recipes.storm.common.bolt;
 
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;
@@ -9,7 +9,7 @@ import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Values;
 import backtype.storm.utils.RegisteredGlobalState;
 import com.google.common.hash.BloomFilter;
-import mango.types.types.IPv4;
+import org.calrissian.mango.types.types.IPv4;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

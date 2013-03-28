@@ -1,8 +1,8 @@
-package org.calrissian.stormrecipes.common.camel.spout.impl;
+package org.calrissian.recipes.camel.spout.impl;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
-import org.calrissian.stormrecipes.common.camel.spout.QueueableConsumer;
+import org.calrissian.recipes.camel.spout.QueueableConsumer;
 
 import java.io.ByteArrayOutputStream;
 

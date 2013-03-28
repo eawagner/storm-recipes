@@ -1,4 +1,4 @@
-package org.calrissian.stormrecipes.common.camel.spout;
+package org.calrissian.recipes.camel.spout;
 
 import org.apache.camel.builder.RouteBuilder;
 
