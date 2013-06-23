@@ -17,11 +17,11 @@ import java.util.Map;
  */
 public class ActivemqJmsSpout extends BaseRichSpout implements MessageListener {
 
-    private String url;
-    private String username;
-    private String password;
-    private String topic;
-    private Fields output;
+    private final String url;
+    private final String username;
+    private final String password;
+    private final String topic;
+    private final Fields output;
 
     private transient ConnectionFactory connectionFactory;
     private transient Connection connection;

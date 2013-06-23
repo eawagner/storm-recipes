@@ -12,11 +12,10 @@ import java.io.ByteArrayOutputStream;
  */
 public class HDFSPollingQueueableConsumer extends QueueableConsumer {
 
-    String baseDirectory;
-    String namenode;
+    private final String baseDirectory;
+    private final String namenode;
 
-
-    boolean localMode = false;
+    private boolean localMode = false;
 
     public HDFSPollingQueueableConsumer(String baseDirectory, String namenode) {
         this.baseDirectory = baseDirectory;
@@ -28,9 +27,8 @@ public class HDFSPollingQueueableConsumer extends QueueableConsumer {
 
         String uriString = "hdfs://" + namenode + baseDirectory;
 
-        if(localMode) {
+        if(localMode)
             uriString += "?fileSystemType=LOCAL";
-        }
 
         from(uriString)
                 .process(new Processor() {
@@ -46,9 +44,9 @@ public class HDFSPollingQueueableConsumer extends QueueableConsumer {
 
                         String[] splits = fileContents.split("\n");
 
-                        for(int i = 0; i < splits.length; i++) {
+                        for(int i = 0; i < splits.length; i++)
                             getQueue().add(splits[i]);
-                        }
+
                     }
                 });
     }

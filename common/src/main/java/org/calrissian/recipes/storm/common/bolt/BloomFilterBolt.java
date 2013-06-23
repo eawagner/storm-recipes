@@ -9,9 +9,10 @@ import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
 import com.google.common.hash.BloomFilter;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.Map;
+
+import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  * Bolt holds a bloom filter, will output the objects that might be contained by the bloom filter
@@ -20,10 +21,9 @@ import java.util.Map;
  * Time: 1:52 PM
  */
 public class BloomFilterBolt<T> extends BaseRichBolt {
-    private static final Logger logger = LoggerFactory.getLogger(BloomFilterBolt.class);
     private BloomFilter<T> bloomFilter;
     private OutputCollector collector;
-    private String updateBloomFilterId;
+    private final String updateBloomFilterId;
     private boolean outputOnExistence = true; //If input exists in the BloomFilter, output
 
     public BloomFilterBolt(BloomFilter<T> bloomFilter) {
@@ -38,7 +38,6 @@ public class BloomFilterBolt<T> extends BaseRichBolt {
         this.bloomFilter = bloomFilter;
         this.updateBloomFilterId = updateBloomFilterId;
         this.outputOnExistence = outputOnExistence;
-        logger.info("UpdateBloomFilterId[" + updateBloomFilterId + "], OutputOnExistence[" + outputOnExistence + "]");
     }
 
     @Override
@@ -53,7 +52,6 @@ public class BloomFilterBolt<T> extends BaseRichBolt {
                 Object bloom = tuple.getValue(0);
                 if (bloom instanceof BloomFilter) {
                     bloomFilter = (BloomFilter<T>) bloom;
-                    logger.info("Updated bloom filter");
                 }
                 return;
             }
@@ -65,7 +63,7 @@ public class BloomFilterBolt<T> extends BaseRichBolt {
                 collector.emit(new Values(value));
             }
         } catch (ClassCastException e) {
-            logger.error("Incoming tuple does not hold the expected type");
+            //do nothing
         }
     }
 

@@ -11,8 +11,6 @@ import backtype.storm.utils.RegisteredGlobalState;
 import com.google.common.hash.BloomFilter;
 import org.calrissian.mango.domain.IPv4;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,7 +24,6 @@ import static org.junit.Assert.assertNotNull;
  * Time: 1:58 PM
  */
 public class BloomFilterBoltTest {
-    private static final Logger logger = LoggerFactory.getLogger(BloomFilterBoltTest.class);
 
     @Test
     public void testBloomFilterBolt() throws Exception {

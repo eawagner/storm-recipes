@@ -11,7 +11,6 @@
     <name>Storm Recipes - Parent</name>
 
     <properties>
-        <accumulo.version>1.4.1</accumulo.version>
         <activemq.version>5.6.0</activemq.version>
         <camel.version>2.8.0</camel.version>
         <hadoop.version>0.20.2</hadoop.version>
@@ -19,7 +18,6 @@
         <mango.version>1.0.3-SNAPSHOT</mango.version>
         <slf4j.version>1.6.4</slf4j.version>
         <storm.version>0.8.1</storm.version>
-
     </properties>
 
     <modules>
@@ -38,17 +36,32 @@
     <dependencyManagement>
         <dependencies>
 
+            <!-- Mango -->
+            <dependency>
+                <groupId>org.calrissian.mango</groupId>
+                <artifactId>mango-core</artifactId>
+                <version>${mango.version}</version>
+            </dependency>
+
+            <!-- Storm -->
+            <dependency>
+                <groupId>storm</groupId>
+                <artifactId>storm</artifactId>
+                <version>${storm.version}</version>
+            </dependency>
+
+            <!--Jms-->
             <dependency>
                 <groupId>org.apache.activemq</groupId>
                 <artifactId>activemq-core</artifactId>
                 <version>${activemq.version}</version>
             </dependency>
 
+            <!--Logging-->
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-simple</artifactId>
                 <version>${slf4j.version}</version>
-                <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
@@ -61,21 +74,7 @@
                 <version>${slf4j.version}</version>
             </dependency>
 
-            <!-- Junit -->
-    	    <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>${junit.version}</version>
-                <scope>test</scope>
-            </dependency>
-
-            <!-- Mango -->
-            <dependency>
-                <groupId>org.calrissian.mango</groupId>
-                <artifactId>mango-core</artifactId>
-                <version>${mango.version}</version>
-            </dependency>
-
+            <!--Camel-->
             <dependency>
                 <groupId>org.apache.camel</groupId>
                 <artifactId>camel-core</artifactId>
@@ -86,20 +85,21 @@
                 <artifactId>camel-hdfs</artifactId>
                 <version>${camel.version}</version>
             </dependency>
+
+            <!--Hadoop-->
             <dependency>
                 <groupId>org.apache.hadoop</groupId>
                 <artifactId>hadoop-core</artifactId>
                 <version>${hadoop.version}</version>
             </dependency>
 
-            <!-- Storm -->
+            <!-- Junit -->
             <dependency>
-                <groupId>storm</groupId>
-                <artifactId>storm</artifactId>
-                <version>${storm.version}</version>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
             </dependency>
-
-
         </dependencies>
 
 

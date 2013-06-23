@@ -17,10 +17,10 @@ import java.util.Map;
  */
 public class ActivemqJmsBolt extends BaseRichBolt {
 
-    private String url;
-    private String username;
-    private String password;
-    private String topic;
+    private final String url;
+    private final String username;
+    private final String password;
+    private final String topic;
 
     private transient ConnectionFactory connectionFactory;
     private transient Connection connection;

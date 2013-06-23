@@ -17,11 +17,11 @@ import java.util.TimerTask;
  */
 public class TimerSpout extends BaseRichSpout {
 
-    private String id;
+    private final String id;
     private transient Timer timer;
 
-    private long delay;
-    private long duration;
+    private final long delay;
+    private final long duration;
 
     public TimerSpout(String id, long duration) {
         this.duration = duration;

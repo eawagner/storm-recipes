@@ -2,13 +2,14 @@ package org.calrissian.recipes.storm.common.mock;
 
 import backtype.storm.task.OutputCollector;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import static java.util.Collections.emptyList;
 
 public class MockBoltOutputCollector extends OutputCollector {
 
 
-    protected List<Object> emittedTuples = new ArrayList<Object>();
+    protected List<Object> emittedTuples = emptyList();
 
     public MockBoltOutputCollector() {
         super(null);

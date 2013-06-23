@@ -2,13 +2,14 @@ package org.calrissian.recipes.storm.common.mock;
 
 import backtype.storm.spout.SpoutOutputCollector;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import static java.util.Collections.emptyList;
 
 
 public class MockSpoutOutputCollector extends SpoutOutputCollector {
 
-    protected List<Object> emittedTuples = new ArrayList<Object>();
+    protected List<Object> emittedTuples = emptyList();
 
     public MockSpoutOutputCollector() {
         super(null);

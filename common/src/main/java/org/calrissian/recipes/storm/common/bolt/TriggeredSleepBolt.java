@@ -12,17 +12,19 @@ import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static java.lang.System.currentTimeMillis;
+
 /**
  * Date: 10/13/12
  * Time: 6:28 PM
  */
 public class TriggeredSleepBolt extends BaseRichBolt {
 
-    private String id;
-    private String sourceId;
+    private final String id;
+    private final String sourceId;
     private transient Timer timer;
 
-    private long delay;
+    private final long delay;
 
     private OutputCollector collector;
 
@@ -47,7 +49,7 @@ public class TriggeredSleepBolt extends BaseRichBolt {
             timer.schedule(new TimerTask() {
                 @Override
                 public void run() {
-                    collector.emit(id, new Values(System.currentTimeMillis()));
+                    collector.emit(id, new Values(currentTimeMillis()));
                 }
             }, delay);
         }
