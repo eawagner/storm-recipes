@@ -2,7 +2,7 @@ package org.calrissian.recipes.storm.common.bolt;
 
 import com.google.common.hash.Funnel;
 import com.google.common.hash.PrimitiveSink;
-import org.calrissian.mango.types.types.IPv4;
+import org.calrissian.mango.domain.IPv4;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

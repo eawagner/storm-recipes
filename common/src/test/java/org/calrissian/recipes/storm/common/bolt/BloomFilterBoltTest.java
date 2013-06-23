@@ -9,7 +9,7 @@ import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Values;
 import backtype.storm.utils.RegisteredGlobalState;
 import com.google.common.hash.BloomFilter;
-import org.calrissian.mango.types.types.IPv4;
+import org.calrissian.mango.domain.IPv4;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

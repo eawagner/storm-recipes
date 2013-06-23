@@ -28,10 +28,14 @@
         <module>jms</module>
     </modules>
 
+    <repositories>
+        <repository>
+            <id>clojars.org</id>
+            <url>http://clojars.org/repo</url>
+        </repository>
+    </repositories>
+
     <dependencyManagement>
-
-
-
         <dependencies>
 
             <dependency>
@@ -67,8 +71,8 @@
 
             <!-- Mango -->
             <dependency>
-                <groupId>mango</groupId>
-                <artifactId>mango-types</artifactId>
+                <groupId>org.calrissian.mango</groupId>
+                <artifactId>mango-core</artifactId>
                 <version>${mango.version}</version>
             </dependency>
 
