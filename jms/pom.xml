@@ -14,33 +14,26 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-
-    <parent>
-        <groupId>org.calrissian.recipes</groupId>
-        <artifactId>storm-recipes</artifactId>
-        <version>0.1-SNAPSHOT</version>
-    </parent>
-
-    <artifactId>storm-recipes-jms</artifactId>
-    <packaging>jar</packaging>
-
-    <name>Storm Recipes - JMS</name>
-
-    <dependencies>
-        <!-- Storm -->
-        <dependency>
-            <groupId>storm</groupId>
-            <artifactId>storm</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-core</artifactId>
-        </dependency>
-    </dependencies>
-
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.calrissian.recipes</groupId>
+    <artifactId>storm-recipes</artifactId>
+    <version>0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>storm-recipes-jms</artifactId>
+  <packaging>jar</packaging>
+  <name>Storm Recipes - JMS</name>
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>activemq-core</artifactId>
+    </dependency>
+    <!-- Storm -->
+    <dependency>
+      <groupId>storm</groupId>
+      <artifactId>storm</artifactId>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
 </project>
