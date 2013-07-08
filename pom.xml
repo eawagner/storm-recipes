@@ -155,6 +155,7 @@ limitations under the License.
         </plugin>
       </plugins>
     </pluginManagement>
+
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -164,18 +165,6 @@ limitations under the License.
           <target>1.6</target>
           <optimize>true</optimize>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.rat</groupId>
-        <artifactId>apache-rat-plugin</artifactId>
-        <executions>
-          <execution>
-            <goals>
-              <goal>check</goal>
-            </goals>
-            <phase>verify</phase>
-          </execution>
-        </executions>
       </plugin>
       <plugin>
         <groupId>com.google.code.sortpom</groupId>
@@ -192,17 +181,31 @@ limitations under the License.
       </plugin>
     </plugins>
   </build>
+
   <repositories>
     <repository>
       <id>clojars.org</id>
       <url>http://clojars.org/repo</url>
     </repository>
   </repositories>
+
   <profiles>
     <profile>
-      <id>release</id>
+      <id>full</id>
       <build>
         <plugins>
+          <plugin>
+            <groupId>org.apache.rat</groupId>
+            <artifactId>apache-rat-plugin</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+                <phase>verify</phase>
+              </execution>
+            </executions>
+          </plugin>
           <plugin>
             <artifactId>maven-source-plugin</artifactId>
             <executions>
